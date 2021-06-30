@@ -166,7 +166,7 @@
   }
 
   #headSearch .search{
-    width: 630px;
+    width: 890px;
     margin: 0 auto;
   }
   #headSearch .searchTab{
@@ -199,7 +199,7 @@
     height: 40px;
   }
   #headSearch .searchBox{
-    width: 554px;
+    width: 500px;
     height: 40px;
     box-sizing: border-box;
     border: 2px solid #ff5000;
@@ -209,7 +209,7 @@
     position: relative;
   }
   #headSearch .searchBox input{
-    width: 490px;
+    width: 450px;
     height: 36px;
     line-height: 36px;
     outline: none;/* 去除input的边框 */
