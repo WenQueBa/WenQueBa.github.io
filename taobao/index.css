@@ -1,0 +1,890 @@
+/*
+    @规则
+        @charset    设置样式表的编码
+        @import '---.css'    导入其它样式文件
+        @meida      媒体查询
+        @font-face  自定义字体
+*/
+@import 'reset.css';
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.ttf?t=1623079693122') format('truetype');
+}
+  .iconfont{
+    font-family:"iconfont" !important;/* 定义字体 !important为重要标记，优先级很高*/
+    font-size: 16px;
+    font-style: normal;
+    /* 非标准样式 只存在于特有的浏览器当中*/
+    -webkit-font-smoothing: antialiased;/* webkit针对webkit内核 作用都是让字体进行抗锯齿的渲染*/
+    -moz-osx-font-smoothing: grayscale;/*moz针对火狐内核*/
+  }
+
+  /* 头部信息 */
+  #headMessage li{/* 先定义头部id，再对标签进行修改 */
+    float:left;
+    line-height: 35px;
+    padding: 0 6px;
+    font-size: 0;/*控制文字之间的边距*/
+  }
+  #headMessage a{
+    color: #9c9c9c;
+    font-size: 12px;
+  }
+  #headMessage a:hover{
+    color: #f40;
+  }
+
+  #headMessage a.login{
+    color: #f22e00;
+  }
+  #headMessage span{
+    font-size: 12px;
+  }
+  #headMessage span.arrow{
+    margin-left: 7px;
+  }
+  #headMessage li strong{
+    font-size: 12px;
+    color: #f22e00;
+  }
+  #headMessage li span.stroe{
+    color: #9c9c9c;
+  }
+  #headMessage li.line{
+    font-size: 12px;
+    color: #ddd;
+    padding: 0 5px;
+  }
+
+  /* 头部广告 */
+  #headAd{
+    background-color: #f12f04;
+  }
+  #headAd .go{
+    display: block;
+    padding: 10px 10px 10px 15px;
+  }
+  #headAd .go img{
+    width:80px;
+    height:80px;
+  }
+  #headAd ul{
+    padding-top: 13px;
+  }
+  #headAd li{
+    float: left;
+    width: 209px;
+    height: 75px;
+    margin-right: 10px;
+
+    box-sizing: border-box; /* 让盒模型变为IE盒模型（怪异盒模型） */
+    /*
+       盒模型分为  
+       1、标准盒模型：
+       总宽度=border（左右）+width+padding(左右)
+       总高度=border（上下）+width+padding(上下)
+       2、IE盒模型（怪异盒模型）
+       总宽度=width;
+       总高度=height;
+    */
+
+  }
+  #headAd li h3{
+    font-size: 20px;
+    line-height: 28px;
+  }
+  #headAd li p{
+    font-size: 14px;
+    line-height: 20px;
+  }
+  #headAd li a{
+    display: block;
+    color: #fff;
+  }
+  #headAd li a img{
+    width: 54px;
+    height: 52px;
+    border-radius: 10px;
+  }
+  #headAd li.item1{
+    background: url("a8.jpg") no-repeat;
+  }
+  #headAd li.item2{
+    background: url("a9.jpg") no-repeat;
+  }
+  #headAd li.item3{
+    background: url("a10.jpg") no-repeat;
+  }
+  #headAd li.item4{
+    background: url("a11.jpeg") no-repeat;
+  }
+  #headAd li.item5{
+    background: url("a12.png") no-repeat;
+    margin-right: 0;
+  }
+
+/* 头部搜索 */
+  #headSearch{
+    background-color: #fff;
+    padding: 24px 0 10px 0;
+  }
+  #headSearch h1 a{
+    display: block;
+    width: 190px;
+    height: 70px;
+    background: url(Aname.jpeg) center no-repeat;
+    background-size: cover;
+    text-indent: -9999px;/* 首行缩进 */
+    overflow: hidden;
+    margin-top: 8px;
+    margin-left: 30px;
+  }
+  #headSearch .code{
+    width: 72px;
+    height: 86px;
+    border: 1px solid #eee;
+    position: relative;/* 相对定位 脱离文本流（但在文本流中的位置还存在）*/
+    margin-right: 110px;
+    text-align: center;
+  }
+  #headSearch .code img{
+    width: 62px;
+    height: 62px;
+  }
+  #headSearch .close{
+    position: absolute;/* 绝对定位 （在文本流中的位置不存在） */
+    left:-16px;
+    top: -1px;
+
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    border: 1px solid #eee;
+    color:#ddd;
+    cursor: pointer;
+  }
+
+  #headSearch .search{
+    width: 630px;
+    margin: 0 auto;
+  }
+  #headSearch .searchTab{
+    height: 22px;
+    padding-left: 17px;
+  }
+  #headSearch .searchTab li{
+    float: left;
+    width: 36px;
+    line-height: 22px;
+    margin-right: 4px;
+    text-align: center;
+    color: #f40;
+    cursor: pointer;
+  }
+  #headSearch .searchTab li:hover{
+    background-color: #ffeee5;
+  }
+  #headSearch .searchTab li.active{
+    color: #fff;
+    font-weight: bold;
+    background-color: #ff5000;
+    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9000',
+    endColorstr='#ff5000',GradientType=1); */
+    /* 颜色的线性渐变(兼容性为IE9以上)  to right to是关键字 到达右边*/
+    /* background-image: linear-gradient(to right，#ff9000,#ff5000); */
+    border-radius: 6px 6px 0 0;
+  }
+  #headSearch .searchContent{
+    height: 40px;
+  }
+  #headSearch .searchBox{
+    width: 554px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 2px solid #ff5000;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  #headSearch .searchBox input{
+    width: 490px;
+    height: 36px;
+    line-height: 36px;
+    outline: none;/* 去除input的边框 */
+    border: none;
+    text-indent: 10px;
+
+    position: absolute;
+    z-index: 2;/*z-index，对象的层叠顺序，用一个整数来定义堆叠的层次，数值越大，被层叠在越上面*/
+    background-color: transparent;/* 透明 为了看到后面的文字 */
+  }
+  #headSearch .searchBox .placeholder{
+    position: absolute;
+    top: 6px;
+    left: 14px;
+  }
+  #headSearch .searchBox .placeholder span{
+    color: #9c9c9c;
+    vertical-align: 1px;/* 设置元素的垂直排列 */
+  }
+  #headSearch .imgSearch{
+    font-size: 28px;
+    color: #9c9c9c;
+    position: absolute;
+    right: 20px;
+    top: -2px;
+    cursor: pointer;
+  }
+  #headSearch .searchContent button{
+    width: 74px;
+    height: 40px;
+    text-align: center;
+    font-size:18px;
+    line-height: 40px;
+    color: #fff;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background-color: #ff5000;
+  }
+  #headSearch .hotKey{
+    height: 25px;
+    line-height: 25px;
+  }
+  #headSearch .hotKey a:hover {
+    color: #f50;
+  }
+
+  /* 导航 */
+  #nav h2{
+    width: 190px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    background-color: #f50;
+  }
+  #nav ul{
+    margin-left: 190px;
+    height: 30px; /* 实现渐变色背景的显示 */
+
+    /* width: 1000px; */
+    width: calc(100% - 190px);/* 计算CSS的数值，对单位无要求 支持IE9以上的*/
+    background-image: linear-gradient(to right,#ff9000,#ff5000);
+  }
+  #nav ul li{
+    float: left;
+    line-height: 30px;
+    margin: 0 7px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 5px;
+
+    position: relative;
+  }
+  #nav ul li.size{
+    font-size: 16px;
+  }
+  #nav ul li a{
+    color: #fff;
+    font-weight: bold;/* 字体加粗 */
+  }
+  #nav ul li.line{
+    margin: 0;
+    padding: 0;
+  }
+  #nav ul li:hover:before{
+    content: '';
+    position: absolute;
+    width: 23px;
+    height: 13px;
+    background-image: url(css.png);
+    background-size: cover;
+    
+    top: -13px;
+    left: 50%;
+    margin-left: -12px;
+  }
+
+/* 首屏内容 */
+#firstScreen .firstLeft{
+  width: 890px;
+}
+/* 侧边导航 */
+#firstScreen .firstLeft .sideNav{
+    width: 190px;
+    height: 522px;
+    background: #fff;
+    border: 1px solid #ff5000;
+    box-sizing: border-box;
+    border-top: none;
+    padding-top: 5px;
+  }
+#firstScreen .firstLeft .sideNav li{
+    height: 32px;
+    line-height: 32px;
+    padding-left: 15px;
+    color: #999;
+    font-size: 14px;
+    transition: background-color 0.3s;/* css过渡效果（属性+时间） 可以过渡数值和颜色 */
+}
+#firstScreen .firstLeft .sideNav li a{
+    font-size: 14px;
+    color: #666;
+}
+#firstScreen .firstLeft .sideNav li span{
+  font-size: 12px;
+  margin-right: 5px;
+}
+#firstScreen .firstLeft .sideNav li:hover{
+  background: #ffe4dc;
+  color: #f50;
+}
+#firstScreen .firstLeft .sideNav li:hover a{
+  color: #f50;
+}
+#firstScreen .firstLeft .sideNav a:hover{
+  text-decoration: underline;/* 字体下划线 */
+}
+/* 图片1容器 */
+#firstScreen .firstLeft .img1Box{
+  width: 690px;
+  height: 282px;
+  margin-top: 10px;
+}
+#firstScreen .firstLeft .pic {
+  width: 520px;
+  height: 282px;
+  position: relative;
+}
+#firstScreen .firstLeft .pic img{
+  width: 520px;
+  height: 282px;
+}
+#firstScreen .firstLeft .pic button{
+  display: none;
+  width: 20px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 3px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  background-color:rgba(0, 0, 0, 0.3);/* 仅支持IE9+ */
+  /* background-color:#000/9  IE9以下的认识
+  filter:alpha(opacity=30) 透明度 */
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+}
+#firstScreen .firstLeft .pic button.leftBtn{
+  left: 0;
+  border-radius: 0 15px 15px 0;
+}
+#firstScreen .firstLeft .pic button.rightBtn{
+  right: 0;
+  border-radius: 15px 0 0 15px;
+}
+#firstScreen .firstLeft .pic:hover button{
+  display: block;/* 先将block设为none，实现隐藏式的图标 */
+}
+#firstScreen .firstLeft .pic .circle{
+  position: absolute;
+  bottom: 15px; /* 对于绝对定位元素，bottom属性设置单位高于/低于包含它的元素的底边。对于相对定位元素，bottom属性设置单位高于/低于其正常位置的元素的底边。*/
+  left: 50%;
+  margin-left: -35px;
+  border-radius: 10px;
+  padding: 3px 0;
+  font-size: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#firstScreen .firstLeft .pic .circle span.active{
+  background-color: #ff5000;
+}
+#firstScreen .firstLeft .pic .circle span{
+  display: inline-block;/*后块级元素能够在同一行显示,类似于浮动*/
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 3px;
+  cursor: pointer;
+}
+#firstScreen .firstLeft .ad{
+  width: 160px;
+  height: 282px;
+}
+#firstScreen .firstLeft .img1Box .ad img{
+  width: 160px;
+  height: 282px;
+}
+
+/* 图片2容器 */
+#firstScreen .firstLeft .img2Box{
+  width: 690px;
+  height: 220px;
+  margin-top: 10px;
+}
+#firstScreen .firstLeft .img2Box .picTitle{
+  height: 20px;
+}
+#firstScreen .firstLeft .img2Box .picTitle .text{
+  height: 17px;
+  line-height: 17px;
+}
+#firstScreen .firstLeft .img2Box .picTitle .text .bg{
+  background: url(logo.png) no-repeat left;
+  padding-left: 200px;
+  columns: #666;/* 颜色 */
+}
+#firstScreen .firstLeft .img2Box .picTitle .text i{
+  color: #ff1648;
+}
+#firstScreen .firstLeft .img2Box .picTitle .line{
+  height: 3px;
+  background-color: #ff1648;
+  position: relative;
+}
+#firstScreen .firstLeft .img2Box .picTitle .line span{
+  width: 87px;
+  height: 3px;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+}
+#firstScreen .firstLeft .img2Box .img{
+  width: 520px;
+  height: 200px;
+  background-color: #fff;
+  position: relative;
+  display: table-cell;/* 让所有内容垂直居中*/ 
+  vertical-align: middle;
+  /* display: flex;弹性盒模型 兼容性IE10+
+  justify-content: space-around;
+  align-items: center;*/
+}
+#firstScreen .firstLeft .img2Box .img img{
+  width: 240px;
+  height: 200px;
+  margin: 0 10px;
+}
+#firstScreen .firstLeft .img2Box .ad .title{
+  height: 20px;
+  line-height: 20px;
+}
+#firstScreen .firstLeft .img2Box .ad img{
+  width: 160px;
+  height: 200px;
+}
+
+/* 新闻头条 */
+#firstScreen .firstLeft .news{
+  width: 890px;
+  height: 100px;
+  background: #fff;
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding: 13px 13px 13px 20px;
+  border: #ff9000 solid 1px;
+}
+#firstScreen .firstLeft .news .hd{
+  margin-left: 0;
+}
+#firstScreen .firstLeft .news .hd h3{
+  width: 129px;
+  height: 65px;
+  /* 以图换字 插入图片，设置汉字缩进，隐藏汉字 */
+  background: url(e33.png) no-repeat;
+  background-size: cover;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+#firstScreen .firstLeft .news .hd p{
+  color: #999;
+  line-height: 24px;
+}
+#firstScreen .firstLeft .news .newList{
+  width: 680px;
+  position: relative;
+}
+#firstScreen .firstLeft .news .newList .img{
+  margin-right: 15px;
+}
+#firstScreen .firstLeft .news .newList .img img{
+  width: 130px;
+  height: 73px;
+}
+#firstScreen .firstLeft .news .newList h4{
+  line-height: 28px;
+  font-size: 16px;
+  font-weight: normal;
+}
+#firstScreen .firstLeft .news .newList h4 a{
+  color: #333;
+}
+#firstScreen .firstLeft .news .newList .item h4 a:hover{
+  color: #ff5000;
+}
+#firstScreen .firstLeft .news .newList p{
+  line-height: 18px;
+  font-size: 14px;
+}
+#firstScreen .firstLeft .news .newList p a{
+  color: #999;
+}
+#firstScreen .firstLeft .news .newList .more{
+  position:absolute;
+  top: 0;
+  right: 0;
+  color: #999;
+}
+#firstScreen .firstLeft .news .newList .more:hover{
+  color: #ff5000;
+}
+/* 右边的内容 */
+#firstScreen .firstRight{
+  margin-top: 10px;
+  width: 290px;
+}
+/* 用户 */
+#firstScreen .firstRight .user{
+  height: 140px;
+  padding-top: 5px;
+  background-image: url(f222.jpg);
+  background-size: cover;
+}
+#firstScreen .firstRight .user .avater{
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 50%;/* 变圆 */
+  overflow: hidden;/* 不是把图片变成圆形，而是把父级变成圆形，所以直接将超出的部分隐藏即可 */
+}
+#firstScreen .firstRight .user .avater img{
+  width: 50px;
+  height: 50px;
+}
+#firstScreen .firstRight .user .username{
+  text-align: center;/* 文本居中 */
+  line-height: 16px;
+}
+#firstScreen .firstRight .user .members{
+  text-align: center;
+  font-size: 0;
+}
+#firstScreen .firstRight .user .members a{
+  display: inline-block;/* 定义为行内块级元素 */
+  font-size: 12px;
+  border-radius: 9px;
+  padding: 0 10px 0 20px;
+  margin: 0 2px;
+  background-color: #ffe4dc;
+}
+#firstScreen .firstRight .user .members a .gold{
+  background: #ffe4dc /* url(bg1.png) no-repeat; */
+}
+#firstScreen .firstRight .user .members a .club{
+  background: #ffe4dc /* url(bg2.png) no-repeat; */
+}
+#firstScreen .firstRight .user .btn{
+  position: relative;
+  margin-left: 20px;
+}
+#firstScreen .firstRight .user .btn button{
+  text-align: center;
+  width: 75px;
+  height: 25px;
+  line-height: 25px;
+  margin: 12px 2px 0 2px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  background-image: linear-gradient(to right,#ff9000,#ff5000);
+}
+#firstScreen .firstRight .user .btn button .login{
+  width: 92px;
+}
+/* 举报 */
+#firstScreen .firstRight .tip0ff{
+  display: block;
+  height: 26px;
+  line-height: 26px;
+  color: #f40;
+  background: #ffe4dc;
+  text-align: center;
+}
+#firstScreen .firstRight a .tip0fff i{
+  font-size: 12px;
+  vertical-align:1px;
+}
+/* 公告区 */
+#firstScreen .firstRight .notice{
+  height: 108px;
+  background-color: #fff;
+}
+#firstScreen .firstRight .notice .title{
+  text-align: center;
+  font-size: 0;
+}
+#firstScreen .firstRight .notice .title li{
+  display: inline-block;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 4px;
+  margin: 0 10px;
+}
+#firstScreen .firstRight .notice .title li.active{
+  font-weight: bold;
+  border-bottom: 2px solid #f40;
+}
+#firstScreen .firstRight .notice .title li a:hover{
+  color: #f40;
+}
+#firstScreen .firstRight .notice .content{
+  margin: 0 12px;
+  padding-top: 10px;
+}
+#firstScreen .firstRight .notice .content li{
+  height: 25px;
+  line-height: 25px;
+  float: left;
+  width: 140px;
+}
+#firstScreen .firstRight .notice .content li.item1{
+  width: 100%;
+}
+#firstScreen .firstRight .notice .content li.item1 a{
+  color: #ff5000;
+}
+#firstScreen .firstRight .notice .content li a:hover{
+  color: #ff5000;
+}
+/* 图标区域 */
+#firstScreen .firstRight .icon{
+  width: 290px;
+  height: 231px;
+  background-color: #fff;
+  /* 定义列宽的算法，fixd：根据表格宽度自动计算列宽，每列为均分整个表格的宽度 */
+  table-layout: fixed;
+}
+#firstScreen .firstRight .icon tr{
+  height: 77px;
+}
+#firstScreen .firstRight .icon td{
+  border: 1px solid #f4f4f4;
+  text-align: center;
+}
+#firstScreen .firstRight .icon td span img{
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+}
+#firstScreen .firstRight .icon td i{
+  line-height: 34px;
+  color: #333;
+}
+
+/* 精选内容 */
+#firstScreen .firstRight .app{
+  height: 111px;
+  background: #fff;
+}
+#firstScreen .firstRight .app .title{
+  height: 30px;
+  line-height: 30px;
+}
+#firstScreen .firstRight .app h3{
+  font-size: 14px;
+  padding-left: 14px;
+}
+#firstScreen .firstRight .app a{
+  margin-right: 10px;
+}
+#firstScreen .firstRight .app a:hover{
+  color: #f40;
+}
+#firstScreen .firstRight .app .appIcon{
+  text-align: center;
+  font-size: 0;
+}
+#firstScreen .firstRight .app .appIcon li{
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  margin: 0 10px 8px 10px;
+}
+#firstScreen .firstRight .app .appIcon li img{
+  width: 32px;
+  height: 32px;
+}
+/* 次级内容:左边的内容 */
+.layer .goods{
+  width: 590px;
+  height: 658px;
+  background-color: #fff;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.layer .goods .head{
+  height: 24px;
+  line-height: 24px;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+.layer .goods .head h3{
+  font-size: 0;
+  font-weight: normal;
+}
+.layer .goods .head h3 img{
+  height: 24px;
+}
+.layer .goods .head h3 span{
+  vertical-align: middle;/* 元素垂直对齐方式 */
+  color: #ccc;
+  font-size: 20px;
+  margin: 0 5px;
+}
+.layer .goods .head h3 i{
+  font-size: 12px;
+  color: #999;
+  vertical-align: middle;
+}
+.layer .goods .head a.change{
+color: #999;
+}
+.layer .goods .list{
+  font-size: 0;
+  text-align: center;
+}
+.layer .goods .list li{
+  width: 180px;
+  display: inline-block;
+  margin: 0 2px 35px 2px;
+  text-align: left;
+}
+.layer .goods .list li img{
+  width: 180px;
+  height: 180px;
+}
+.layer .goods .list li h4{
+  font-size: 16px;
+  height: 28px;
+  line-height: 28px;
+  font-weight: normal;
+}
+.layer .goods .list li h4 a:hover{
+  color: #f40;
+}
+.layer .goods .list li .text{
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  overflow: hidden;
+}
+.layer .goods .list li .text a{
+  color: #999;
+}
+.layer .goods .list li .comment{
+  display: block;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  color: #35b1ff;
+  margin-top: 12px;
+}
+.layer .goods .list li .comment span{
+  font-size: 14px;
+  margin-right: 4px;
+}
+/* 次级内容:右边的内容 */
+.layer .shoping .list li{
+  width: 180px;
+  display: inline-block;
+}
+.layer .shoping .list li .text{
+  height: 44px;
+  line-height: 22px;
+  font-size: 14px;
+  overflow: hidden;
+  margin-top: 11px;
+}
+.layer .shoping .list li .text span{
+  font-size: 14px;
+  color: #ebebeb;
+  position: relative;
+  top: -5px;
+}
+.layer .shoping .list li .text a:hover{
+  color: #f40;
+}
+.layer .shoping .list li .comment{
+  color: #999;
+}
+.layer .shoping .list li .comment img{
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+/* 右侧固定定位导航 */
+#tool{
+  width: 50px;
+  height: 350px;
+  position: fixed;/* 固定定位 */
+  top: 200px;
+  right: 35px;
+}
+#tool span{
+  font-size: 32px;
+  color: #ff7f13;
+  width: 50px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  position: absolute;
+  top: -28px;
+}
+#tool div{
+  height: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#tool a{
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background: #fff;
+  word-break: keep-all;/* 使文字在空格处换行 */
+}
+#tool a:after{/* 一个：是伪类与content合用（兼容性更高），两个：是伪元素(CSS3中的) */
+  content:'';
+  border-bottom: 1px solid #efefef;
+  width: 34px;
+  position: absolute;
+  left: 8px;
+  bottom: 0;
+}
+#tool a.item6{
+  line-height: 40px;
+}
+#tool a:hover{
+  background-image: linear-gradient(135deg,#ff9000,#ff5000);
+  color: #fff;
+  font-weight: bold;
+}
+#tool a:hover:after{
+  border: none;
+}
+#tool a.active{
+  background-image: linear-gradient(135deg,#ff9000,#ff5000);
+  color: #fff;
+  font-weight: bold;
+}
+#tool a.active:after{
+  border: none;
+}
