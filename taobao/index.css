@@ -60,6 +60,9 @@
   #headAd{
     background-color: #f12f04;
   }
+  #headAd .layer{
+    width: 890px;
+  }
   #headAd .go{
     display: block;
     padding: 10px 10px 10px 15px;
@@ -127,6 +130,9 @@
   #headSearch{
     background-color: #fff;
     padding: 24px 0 10px 0;
+  }
+  #headSearch .good{
+    width: 890px;
   }
   #headSearch h1 a{
     display: block;
@@ -236,6 +242,9 @@
     right: 20px;
     top: -2px;
     cursor: pointer;
+  }
+  #headSearch .searchContent .btn{
+    color: #fff;
   }
   #headSearch .searchContent button{
     width: 74px;
